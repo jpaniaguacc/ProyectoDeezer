@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container-fluid ps-0 pe-0">
+        <div class="row">
+            <div class="col-md-2 izquierda">
+                <div class="container p-3">
+                    <div class="row">
+                        <img src="img/logo.png" alt="">
+                    </div>
+                    <nav class="navbar navbar-expand-lg navbar-light ">
+                        <div class="container-fluid ">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse" id="navbarNav">
+                                <ul class="navbar-nav flex-column ">
+                                    <li class="nav-item">
+                                        <a class="nav-link fs-5 fw-bold" href="#">Mi libreria</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Artistas</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link disabled">Albums</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Canciones</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Estaciones</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link fs-5 fw-bold" href="#">Playlist</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Metal</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Para bailar</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Rock 90s</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Baladas</a>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+
+            </div>
+            <!--Columna Derecha-->
+            <div class="col-md-10">
+                <div class="container" style="padding: 30px 50px;">
+                    <!--Fila 1-->
+                    <div class="row justify-content-between mb-5">
+                        <div class="col-md-5 ps-0">
+                            <form class="d-flex">
+                                <input id="nombreArtista" class="form-control me-2 rounded-pill" type="search"
+                                    placeholder="Search" aria-label="Search">
+                                <a class="btn btn-outline-danger rounded-pill"
+                                    onclick="buscarArtistas(document.getElementById('nombreArtista').value)"><i
+                                        class="fas fa-search"></i></a>
+                            </form>
+                        </div>
+                        <div class="col-md-3 navbar navbar-expand-lg justify-content-end pe-0 ">
+                            <ul class="navbar-nav">
+                                <li class="nav-item dropdown">
+
+                                    <a class="text-decoration-none text-gray dropdown-toggle fs-5 " href="#"
+                                        id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <i class="fas fa-user txt-redPrincipal me-1"></i> Peter Parker.
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end text-center"
+                                        aria-labelledby="navbarDropdownMenuLink">
+                                        <li><a class="dropdown-item" href="#">pparker@gmail.com</a></li>
+                                        <li><a class="dropdown-item" href="#">Activo</a></li>
+                                        <li><a class="dropdown-item" href="#">Salir</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+                    <!--fila 2-->
+                    <div id="bannerArtista" class="row bg-lightRed mb-4">
+                        <div id="fotobaner" class="col-md-3 ps-0 pe-0">
+                            <!--aqui va la foto del artista-->
+                        </div>
+                        <div id="fotograndebaner" class="col-md-9 bg-lightRed opacity-85">
+
+                        </div>
+
+                    </div>
+                    <!--Lista de Canciones-->
+                    <div class="row justify-content-center">
+                        <div class="col-sm-12">
+                            <h3 class="txt-lightRed fw-bold" id="resultado"></h3>
+                            <p id="imgartista">
+
+                            </p>
+                            <h3 id="name"></h3>
+
+                            <p id="title"></p>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 120px;" id="contenedor" class="row">
+                    </div> 
+                </div>
+            </div>
+            <!--Reproductor de Musica-->
+            <div style="height: 70px;" class=" row bg-lightRed fixed-bottom justify-content-between">
+                <div class="pt-3 col-5" id="controles">
+                    <a href="#" class="btn btn-dark"><i class="fas fa-backward"></i></a>
+                    <a href="#" class="btn btn-dark"><i class="far fa-play-circle"></i></a>
+                    <a href="#" class="btn btn-dark"><i class="fas fa-forward"></i></a>
+                    <a href="#" class="btn btn-dark"><i class="far fa-pause-circle"></i></a>
+                    
+                </div>
+                <div class="col-3 align-items-center">
+                    <label class="text-light" for="volumen">Volumen</label>
+                    <input class="form-control bg-dark" type="range" name="volumen" id="">
+                </div>
+
+
+               
+            </div>
+            <!--Fin Reproductor de Musica-->
+
+        </div>
+
+    </div>
+    <script src="js/bootstrap.js"></script>
+    <script src="jquery/jquery-3.6.0.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="https://kit.fontawesome.com/27f204c8a9.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

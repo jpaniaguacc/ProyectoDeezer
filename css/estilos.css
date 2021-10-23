@@ -1,0 +1,94 @@
+
+body{
+    font-family: 'Mulish', sans-serif;
+}
+
+.text-darkRed{
+    color: #662323;
+}
+.bg-red{
+    background-color: #662323;
+}
+
+.txt-redPrincipal{
+    color: #E86060;
+}
+
+.btn-bgredPrincipal{
+    background-color: #db5858;;
+}
+
+.bg-lightRed{
+    background-color: #FF7676;
+}
+.txt-lightRed{
+    color: #FF7676;
+}
+
+.text-gray{
+    color: #828282;
+}
+
+#sidebar-container{
+    min-height: 100vh;
+
+}
+
+#sidebar-container .logo{
+    width: 18rem;
+}
+
+.izquierda{
+    background-color: #662323;
+    min-height: 100vh;
+}
+.nav-link{
+    color: #fff !important;
+}
+
+.nav-link:hover{
+    color: #fff !important;
+    color: #E86060 !important ;
+}
+
+.articulo2{
+    width: 100%;
+    height: 450px;
+    background: url('../img/audifono.jpg') no-repeat center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: flex-end;
+    padding-left: 50px;
+    padding-bottom: 30px;
+}
+
+.btn_articulo{
+    display: inline-block;
+    border: 0;
+    font-weight: bold;
+    padding: 10px 60px;
+    background: #fff;
+    color: black;
+    font-size: 15px;
+    width:150px;
+    border-radius: 40px;
+    
+
+}
+
+.btn_articulo:hover{
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    transition: .4s;
+}
+
+
+@media screen and (max-width:850px){
+    .izquierda{
+        background-color: #662323;
+        min-height: 27vh;
+    }
+  }
+
